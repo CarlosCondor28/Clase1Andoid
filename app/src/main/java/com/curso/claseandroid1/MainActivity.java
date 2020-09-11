@@ -3,16 +3,25 @@ package com.curso.claseandroid1;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     Clase1 clase1;
+    Button boton;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        boton = findViewById(R.id.buttonn);
+        textView = findViewById(R.id.textView);
+
 
         String cadena = "Hola";
         int j = 10;
@@ -20,12 +29,20 @@ public class MainActivity extends AppCompatActivity {
 
         int a= 2;
         int b = 5;
-        int c = clase1.suma(a,b);
+        final int c = clase1.suma(a,b);
 
         //Imprime un mensaje en la consola
         Log.d("TagSuma", Integer.toString(c));
 
+        // Muestra mensaje en aplicación
         Toast.makeText(this, "OnCreate", Toast.LENGTH_SHORT).show();
+
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.setText(c);
+            }
+        });
 
     }
 
