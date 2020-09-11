@@ -31,17 +31,20 @@ public class MainActivity extends AppCompatActivity {
         int b = 5;
         final int c = clase1.suma(a,b);
 
-        //Imprime un mensaje en la consola
-        Log.d("TagSuma", Integer.toString(c));
-
-        // Muestra mensaje en aplicación
-        Toast.makeText(this, "OnCreate", Toast.LENGTH_SHORT).show();
 
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textView.setText(Integer.toString(c));
+
+                //Imprime un mensaje en la consola
+                Log.d("TagSuma", Integer.toString(c));
+
+                // Muestra mensaje en aplicación
+                Toast.makeText(getBaseContext(), "OnCreate", Toast.LENGTH_SHORT).show();
+
             }
+
         });
 
     }
