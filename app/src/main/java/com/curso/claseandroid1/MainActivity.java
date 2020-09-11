@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText(c);
+                textView.setText(Integer.toString(c));
             }
         });
 
