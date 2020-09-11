@@ -3,6 +3,7 @@ package com.curso.claseandroid1;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +22,38 @@ public class MainActivity extends AppCompatActivity {
         int b = 5;
         int c = clase1.suma(a,b);
 
+        //Imprime un mensaje en la consola
         Log.d("TagSuma", Integer.toString(c));
+
+        Toast.makeText(this, "OnCreate", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(this, "OnStart", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(this, "OnPause", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "OnResume", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, "OnDestroy", Toast.LENGTH_SHORT).show();
 
     }
 }
