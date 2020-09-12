@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 //Pasar de main activity a activity2
 
                 Intent intent = new Intent(getApplicationContext(), Activity2.class);
+                String cadenaIntent = "Activy2";
+                intent.putExtra("cadena",cadenaIntent);
                 startActivity(intent);
 
                 //Imprime un mensaje en la consola
