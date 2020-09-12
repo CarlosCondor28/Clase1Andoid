@@ -1,6 +1,8 @@
 package com.curso.claseandroid1;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,17 +42,22 @@ public class MainActivity extends AppCompatActivity {
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText(Integer.toString(c));
+
+                //Pasar de main activity a activity2
+
+                Intent intent = new Intent(getApplicationContext(), Activity2.class);
+                startActivity(intent);
 
                 //Imprime un mensaje en la consola
-                Log.d("TagSuma", Integer.toString(c));
+                Log.d("Intent", "Cambio de Activity");
 
                 // Muestra mensaje en aplicación
-                Toast.makeText(getBaseContext(), "OnCreate", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "Activity2", Toast.LENGTH_SHORT).show();
 
             }
 
         });
+
 
     }
 
