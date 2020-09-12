@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 // Muestra mensaje en aplicación
                 Toast.makeText(getBaseContext(), "Activity2", Toast.LENGTH_SHORT).show();
 
+                finish();
+
             }
 
         });
