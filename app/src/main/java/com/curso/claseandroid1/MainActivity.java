@@ -8,16 +8,21 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class MainActivity extends AppCompatActivity {
 
+    //Campos
     Clase1 clase1;
     Button boton;
     TextView textView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         boton = findViewById(R.id.buttonn);
         textView = findViewById(R.id.textView);
