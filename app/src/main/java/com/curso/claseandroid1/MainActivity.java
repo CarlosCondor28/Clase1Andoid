@@ -48,7 +48,11 @@ public class MainActivity extends AppCompatActivity {
                 String user = usuario.getText().toString();
                 int password = Integer.parseInt(contraseña.getText().toString());
 
-                if( user == "Carlos"  &&  password == 12345){
+                Log.d("Usuario", user);
+                Log.d("Contraseña", Integer.toString(password));
+
+
+                if(user.equals("Carlos") &&  password == 12345){
 
                     //Pasar de main activity a activity2
 

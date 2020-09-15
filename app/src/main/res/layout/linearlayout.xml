@@ -41,14 +41,14 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="300dp">
+        android:layout_marginTop="50dp">
 
         <Button
             android:layout_width="wrap_content"
             android:id="@+id/iniciar_sesion"
             android:fontFamily="@font/fuente1"
             android:layout_height="wrap_content"
-            android:text="Boton1" />
+            android:text="Iniciar Sesión  " />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
