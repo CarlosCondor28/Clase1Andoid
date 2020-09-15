@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,22 +15,22 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     //Campos
-    Clase1 clase1;
     Button boton;
-    TextView textView;
-
+    EditText usuario;
+    EditText contraseña;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.linearlayout);
 
+        //Inicializar Campos
+        boton = findViewById(R.id.iniciar_sesion);
+        usuario = findViewById(R.id.usuario);
+        contraseña = findViewById(R.id.contraseña);
 
-        boton = findViewById(R.id.buttonn);
-        textView = findViewById(R.id.textView);
-
-
+/*
         String cadena = "Hola";
         int j = 10;
         clase1 = new Clase1(cadena);
@@ -37,26 +38,38 @@ public class MainActivity extends AppCompatActivity {
         int a= 2;
         int b = 5;
         final int c = clase1.suma(a,b);
+        */
 
 
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //Pasar de main activity a activity2
+                String user = usuario.getText().toString();
+                int password = Integer.parseInt(contraseña.getText().toString());
 
-                Intent intent = new Intent(getApplicationContext(), Activity2.class);
-                String cadenaIntent = "Activy2";
-                intent.putExtra("cadena",cadenaIntent);
-                startActivity(intent);
+                if( user == "Carlos"  &&  password == 12345){
 
-                //Imprime un mensaje en la consola
-                Log.d("Intent", "Cambio de Activity");
+                    //Pasar de main activity a activity2
 
-                // Muestra mensaje en aplicación
-                Toast.makeText(getBaseContext(), "Activity2", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), Activity2.class);
+                        String cadenaIntent = "Activy2";
+                        intent.putExtra("cadena",cadenaIntent);
+                        startActivity(intent);
 
-                finish();
+                        //Imprime un mensaje en la consola
+                        Log.d("Intent", "Cambio de Activity");
+
+                        // Muestra mensaje en aplicación
+                        Toast.makeText(getBaseContext(), "Activity2", Toast.LENGTH_SHORT).show();
+
+                        finish();
+                }
+
+                else{
+                    Toast.makeText(getBaseContext(), "Contraseña o Usuario incorrecto", Toast.LENGTH_SHORT).show();
+
+                }
 
             }
 

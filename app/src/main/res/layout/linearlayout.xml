@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/fuente1"
+        android:textSize="50dp"
+        android:text="Bienvenido"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/usuario"
+        android:inputType="text"
+        android:fontFamily="@font/fuente1"
+        android:layout_marginTop="100dp"
+        android:text="Usuario"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contraseña"
+        android:fontFamily="@font/fuente1"
+        android:layout_marginTop="10dp"
+        android:inputType="numberPassword"
+        android:text="Contraseña"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="300dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/iniciar_sesion"
+            android:fontFamily="@font/fuente1"
+            android:layout_height="wrap_content"
+            android:text="Boton1" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
