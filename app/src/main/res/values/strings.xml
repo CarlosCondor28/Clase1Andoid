@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ClaseAndroid1</string>
+    <string name="actividad_2">Actividad 2</string>
+    <string name="solicitar_posicion_actual">Solicitar Posicion</string>
+    <string name="ciencias">Ciencias</string>
+
 </resources>
