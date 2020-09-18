@@ -3,10 +3,12 @@ package com.curso.claseandroid1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button boton;
     EditText usuario;
     EditText contraseña;
+    CheckBox checkBox;
 
 
     @Override
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         boton = findViewById(R.id.iniciar_sesion);
         usuario = findViewById(R.id.usuario);
         contraseña = findViewById(R.id.contraseña);
+        checkBox  = findViewById(R.id.checkBox);
 
 /*
         String cadena = "Hola";
@@ -55,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 if(user.equals("Carlos") &&  password == 12345){
 
                     //Pasar de main activity a activity2
+                    boolean boolCheckBox = checkBox.isChecked();
+
+                    Log.d("MainAcitivyValorBool", String.valueOf(boolCheckBox));
+
+
+                    SharedPreferences.Editor sharedPreferences = getSharedPreferences("Preferencias", MODE_PRIVATE).edit();
+                        sharedPreferences.putBoolean("Recuerdame",boolCheckBox);
+                        sharedPreferences.apply();
 
                         Intent intent = new Intent(getApplicationContext(), Activity2.class);
                         String cadenaIntent = "Activy2";

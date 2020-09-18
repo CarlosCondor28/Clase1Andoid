@@ -3,8 +3,10 @@ package com.curso.claseandroid1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -19,9 +21,24 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                //Crar intent para pasar a una activity
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                startActivity(intent);
+                SharedPreferences sharedPreferences = getSharedPreferences("Preferencias", MODE_PRIVATE);
+                boolean boolCheckBox = sharedPreferences.getBoolean("Recuerdame", false);
+                Log.d("valorShareP", String.valueOf(boolCheckBox));
+
+                if(boolCheckBox){
+                    //Crar intent para pasar a una activity
+                    Intent intent = new Intent(SplashActivity.this, Activity2.class);
+                    String cadenaIntent = "Activy2";
+                    intent.putExtra("cadena",cadenaIntent);
+                    startActivity(intent);
+                }
+
+                else {
+                    //Crar intent para pasar a una activity
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+
             }
         }, 5000);
     }
