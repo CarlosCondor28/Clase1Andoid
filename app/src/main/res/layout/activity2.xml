@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:text="@string/actividad_2"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="34dp" />
 
     <Button
         android:id="@+id/buttonposicion"
@@ -24,10 +24,36 @@
         android:text="@string/solicitar_posicion_actual"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.904" />
+
+    <TextView
+        android:id="@+id/altitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altitud"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonposicion"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.494" />
+        app:layout_constraintVertical_bias="0.11" />
+
+    <TextView
+        android:id="@+id/orientacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="380dp"
+        android:text="Orientacion"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.181" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
