@@ -55,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Usuario", user);
                 Log.d("Contraseña", Integer.toString(password));
 
+                String carlos = "Carlos";
 
-                if(user.equals("Carlos") &&  password == 12345){
+
+                if(user == carlos &&  password == 12345){
 
                     //Pasar de main activity a activity2
                     boolean boolCheckBox = checkBox.isChecked();

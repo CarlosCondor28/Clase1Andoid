@@ -25,21 +25,21 @@ public class SplashActivity extends AppCompatActivity {
                 boolean boolCheckBox = sharedPreferences.getBoolean("Recuerdame", false);
                 Log.d("valorShareP", String.valueOf(boolCheckBox));
 
-                if(boolCheckBox){
+/*                if(boolCheckBox){
                     //Crar intent para pasar a una activity
                     Intent intent = new Intent(SplashActivity.this, Activity2.class);
                     String cadenaIntent = "Activy2";
                     intent.putExtra("cadena",cadenaIntent);
                     startActivity(intent);
-                }
+                }*/
 
-                else {
+
                     //Crar intent para pasar a una activity
                     Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
-                }
+
 
             }
-        }, 5000);
+        }, 2000);
     }
 }
