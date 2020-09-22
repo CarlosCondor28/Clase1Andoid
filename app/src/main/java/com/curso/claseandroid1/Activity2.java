@@ -26,6 +26,11 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -106,6 +111,15 @@ public class Activity2 extends AppCompatActivity {
                     textAltitud.setText(Double.toString(location.getAltitude()));
                     //Agregar Orientación
                     textOrientacion.setText( Float.toString(location.getBearing()));
+
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRefGPS = database.getReference("PosicionGPS");
+
+                    myRefGPS.setValue( String.valueOf(lat) + " , " + String.valueOf(lon) );
+
+
+
+
                 }
             }
         };
@@ -142,6 +156,42 @@ public class Activity2 extends AppCompatActivity {
                 solicitarUltimaPosicion();
             }
         });
+
+        //Codigo para la BD
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Mensajes");
+        DatabaseReference referenciaUserios = database.getReference("Users");
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot child :snapshot.getChildren()){
+                    Log.d(child.getKey().toString(), child.getValue().toString());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        referenciaUserios.orderByPriority().limitToLast(2).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot child :snapshot.getChildren()){
+                    Log.d(child.getKey().toString(), child.getValue().toString());
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
 
     }

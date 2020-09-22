@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -31,5 +32,9 @@ dependencies {
 
     //Api de Google Play Location
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    //Api de RealTime DB
+    implementation 'com.google.firebase:firebase-database:19.4.0'
+
 
 }
