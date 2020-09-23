@@ -27,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
 
                if(boolCheckBox){
                     //Crar intent para pasar a una activity
-                    Intent intent = new Intent(SplashActivity.this, Activity2.class);
+                    Intent intent = new Intent(SplashActivity.this, SpeechActivity.class);
                     String cadenaIntent = "Activy2";
                     intent.putExtra("cadena",cadenaIntent);
                     startActivity(intent);
